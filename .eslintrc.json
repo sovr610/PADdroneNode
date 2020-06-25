@@ -1,0 +1,35 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2020": true,
+        "node": true
+    },
+    "extends": [
+        "prettier",
+        "sonarjs",
+        "plugin:jsdoc/recommended",
+        "plugin:mocha/recommended"
+    ],
+    "plugins":[
+        "prettier",
+        "plugin:sonarjs/recommended",
+        "markdown",
+        "jsdoc",
+        "xss",
+        "mocha"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 11
+    },
+    "rules": {
+        "prettier/prettier": "warning",
+        "xss/rule-name": 2
+    },
+    "overrides":[
+        {
+            // 2. Enable the Markdown processor for all .md files.
+            "files": ["**/*.md"],
+            "processor": "markdown/markdown"
+        }
+    ]
+}
