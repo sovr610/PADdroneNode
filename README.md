@@ -24,3 +24,8 @@
         - **pre-commit**: `lint-staged && npm run test && npm run build`
 
         - **pre-push**: `npm run test`
+
+
+## run 
+
+npm install cylon-audio cylon-m2x cylon-ardrone cylon-firmata cylon-beaglebone cylon-bebop cylon-ble cylon-crazyflie cylon-digispark cylon-imp cylone-intel-iot cylon-joystick cylon-keyboard cylon-leapmotion cylon-mip cylon-mqtt cylon-nest cylon-neurosky cylon-opencv cyylon-hue cylon-pebble cylon-pinoccio cylon-powerup cylon-rapiro cylon-raspi cylon-force cylon-spark cylon-speech cylon-sphero cylon-sphero-ble cylon-tessel cylon-wiced-sense  --allow-root 
