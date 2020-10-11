@@ -1,4 +1,4 @@
-const luainjs = require('luainjs');
+const luainjs = require('lua-in-js');
 
 /*const luaEnv = luainjs.createEnv({
     LUA_PATH,   // default value of package.path
@@ -12,28 +12,31 @@ const luainjs = require('luainjs');
 
 
 
-lua = {}
-lua.init = function(){
-    const luaEnv = luainjs.createEnv();
-    return luaEnv;
+lua = {
+    env: null
 }
 
-lua.executeLine = function(line, luaEnv){
-    const luaScript = luaEnv.parse(line);
-    const returnValue = luaScript.exec()
+lua.init = function(){
+    lua.env = luainjs.createEnv();
+}
+
+lua.executeLine = function(line){
+    let luaScript = lua.env.parse(line);
+    let returnValue = luaScript.exec()
     return returnValue;
 }
 
 lua.executeFile = function(file, luaEnv){
-    const luaScript = luaEnv.parseFile(file);
-    const returnValue = luaScript.exec();
+    let luaScript = lua.env.parseFile(file);
+    let returnValue = luaScript.exec();
     return returnValue;
 }
 
-lua.addFunction = function(funcName, func, luaEnv){
+lua.addFunction = function(funcName, func){
     const myLib = new luainjs.Table({ func });
-    luaEnv.loadLib(funcName, myLib);
-    return luaEnv;
+    lua.env.loadLib(funcName, myLib);
 }
 
-exports.module = lua;
+
+
+module.exports = lua;
