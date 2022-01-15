@@ -63,6 +63,6 @@
     "helmet": "^4.1.1",
     "johnny-five": "file:johnny-five",
     "lua-in-js": "^2.2.0",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.5"
   }
 }
